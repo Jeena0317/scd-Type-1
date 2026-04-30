@@ -138,23 +138,6 @@ upsertIf(1=1)
 
 ---
 
-## ❗ Common Mistakes
-
-* Not setting key column in sink ❌
-* Assuming Alter Row does comparison ❌
-* Using this approach for SCD Type 2 ❌
-
----
-
-## 🧠 Interview Explanation
-
-**Q: How did you implement SCD Type 1 without Join?**
-
-**Answer:**
-
-> I used `upsertIf(1=1)` in Alter Row and configured a key column (employee_id) in the Azure SQL sink. The sink performs key-based matching to decide whether to insert or update records. This approach simplifies the pipeline but performs blind updates since it does not include change detection.
-
----
 
 ## 🛠️ Tools & Technologies
 
